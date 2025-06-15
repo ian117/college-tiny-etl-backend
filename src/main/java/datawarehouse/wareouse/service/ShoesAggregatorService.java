@@ -34,16 +34,16 @@ public class ShoesAggregatorService {
         return allShoes;
     }
 
-    public List<Shoes> getAllDb1(String brand, String model, Double minPrice, Double maxPrice) {
-        return repo1.findAll(ShoeSpecifications.withFilters(brand, model, minPrice, maxPrice));
+    public List<Shoes> getAllDb1(String brand, String model) {
+        return repo1.findAll(ShoeSpecifications.withFilters(brand, model));
     }
 
-    public List<Shoes> getAllDb2(String brand, String model, Double minPrice, Double maxPrice) {
-        return repo2.findAll(ShoeSpecifications.withFilters(brand, model, minPrice, maxPrice));
+    public List<Shoes> getAllDb2(String brand, String model) {
+        return repo2.findAll(ShoeSpecifications.withFilters(brand, model));
     }
 
-    public List<Shoes> getAllDb3(String brand, String model, Double minPrice, Double maxPrice) {
-        return repo3.findAll(ShoeSpecifications.withFilters(brand, model, minPrice, maxPrice));
+    public List<Shoes> getAllDb3(String brand, String model) {
+        return repo3.findAll(ShoeSpecifications.withFilters(brand, model));
     }
     
 }

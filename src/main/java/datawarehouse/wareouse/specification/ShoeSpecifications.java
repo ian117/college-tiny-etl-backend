@@ -20,7 +20,7 @@ public class ShoeSpecifications {
     //     };
     // }
 
-    public static Specification<Shoes> withFilters(String brand, String model, Double minPrice, Double maxPrice) {
+    public static Specification<Shoes> withFilters(String brand, String model) {
         return (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
             
@@ -36,14 +36,6 @@ public class ShoeSpecifications {
                     cb.lower(root.get("model")),
                     "%" + model.toLowerCase() + "%"
                 ));
-            }
-    
-            if (minPrice != null) {
-                predicates.add(cb.ge(root.get("price"), minPrice));
-            }
-    
-            if (maxPrice != null) {
-                predicates.add(cb.le(root.get("price"), maxPrice));
             }
     
             return cb.and(predicates.toArray(new Predicate[0]));

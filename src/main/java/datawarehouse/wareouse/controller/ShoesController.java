@@ -30,7 +30,7 @@ public class ShoesController {
         @RequestParam(required = false) Double minPrice,
         @RequestParam(required = false) Double maxPrice
     ) {
-    return shoesAggregatorService.getAllDb1(brand, model, minPrice, maxPrice);
+    return shoesAggregatorService.getAllDb1(brand, model);
     }
     
     @GetMapping("/zapateria2")
@@ -40,7 +40,7 @@ public class ShoesController {
         @RequestParam(required = false) Double minPrice,
         @RequestParam(required = false) Double maxPrice
     ) {
-    return shoesAggregatorService.getAllDb2(brand, model, minPrice, maxPrice);
+    return shoesAggregatorService.getAllDb2(brand, model);
     }
 
     @GetMapping("/zapateria3")
@@ -50,7 +50,7 @@ public class ShoesController {
         @RequestParam(required = false) Double minPrice,
         @RequestParam(required = false) Double maxPrice
     ) {
-    return shoesAggregatorService.getAllDb3(brand, model, minPrice, maxPrice);
+    return shoesAggregatorService.getAllDb3(brand, model);
     }
 
 }
