@@ -9,18 +9,18 @@ import datawarehouse.wareouse.entity.Shoes;
 import jakarta.persistence.criteria.Predicate;
 
 public class ShoeSpecifications {
-    // public static Specification<Shoes> withFilters(String brand, String color, Double minPrice, Double maxPrice) {
+    // public static Specification<Shoes> withFilters(String brand, String model, Double minPrice, Double maxPrice) {
     //     return (root, query, cb) -> {
     //         List<Predicate> predicates = new ArrayList<>();
     //         if (brand != null) predicates.add(cb.equal(root.get("brand"), brand));
-    //         if (color != null) predicates.add(cb.equal(root.get("color"), color));
+    //         if (model != null) predicates.add(cb.equal(root.get("model"), model));
     //         if (minPrice != null) predicates.add(cb.ge(root.get("price"), minPrice));
     //         if (maxPrice != null) predicates.add(cb.le(root.get("price"), maxPrice));
     //         return cb.and(predicates.toArray(new Predicate[0]));
     //     };
     // }
 
-    public static Specification<Shoes> withFilters(String brand, String color, Double minPrice, Double maxPrice) {
+    public static Specification<Shoes> withFilters(String brand, String model, Double minPrice, Double maxPrice) {
         return (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
             
@@ -31,10 +31,10 @@ public class ShoeSpecifications {
                 ));
             }
     
-            if (color != null) {
+            if (model != null) {
                 predicates.add(cb.like(
-                    cb.lower(root.get("color")),
-                    "%" + color.toLowerCase() + "%"
+                    cb.lower(root.get("model")),
+                    "%" + model.toLowerCase() + "%"
                 ));
             }
     

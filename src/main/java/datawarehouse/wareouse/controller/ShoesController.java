@@ -26,31 +26,31 @@ public class ShoesController {
     @GetMapping("/zapateria1")
     public List<Shoes> getAllDb1(
         @RequestParam(required = false) String brand,
-        @RequestParam(required = false) String color,
+        @RequestParam(required = false) String model,
         @RequestParam(required = false) Double minPrice,
         @RequestParam(required = false) Double maxPrice
     ) {
-    return shoesAggregatorService.getAllDb1(brand, color, minPrice, maxPrice);
+    return shoesAggregatorService.getAllDb1(brand, model, minPrice, maxPrice);
     }
     
     @GetMapping("/zapateria2")
     public List<Shoes> getAllDb2(
         @RequestParam(required = false) String brand,
-        @RequestParam(required = false) String color,
+        @RequestParam(required = false) String model,
         @RequestParam(required = false) Double minPrice,
         @RequestParam(required = false) Double maxPrice
     ) {
-    return shoesAggregatorService.getAllDb2(brand, color, minPrice, maxPrice);
+    return shoesAggregatorService.getAllDb2(brand, model, minPrice, maxPrice);
     }
 
     @GetMapping("/zapateria3")
     public List<Shoes> getAllDb3(
         @RequestParam(required = false) String brand,
-        @RequestParam(required = false) String color,
+        @RequestParam(required = false) String model,
         @RequestParam(required = false) Double minPrice,
         @RequestParam(required = false) Double maxPrice
     ) {
-    return shoesAggregatorService.getAllDb3(brand, color, minPrice, maxPrice);
+    return shoesAggregatorService.getAllDb3(brand, model, minPrice, maxPrice);
     }
 
 }
