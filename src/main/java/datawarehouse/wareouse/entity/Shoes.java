@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Shoes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String model;
